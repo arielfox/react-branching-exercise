@@ -1,0 +1,10 @@
+.breadcrumbList {
+    list-style: none;
+    text-align: left;
+}
+
+.breadcrumb {
+    display:inline;
+    padding: 0 0px;
+
+}

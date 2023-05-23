@@ -4,9 +4,8 @@ import OptionItem from './OptionItem'
 
 const OptionList = ({ question }) => {
     const renderedOptions = question.options.map(option =>
-        <OptionItem key={option.id} option={option} />
+        <OptionItem key={option.id} option={option} question={question} />
     )
-
     return (
         <ul>{renderedOptions}</ul>
     )
