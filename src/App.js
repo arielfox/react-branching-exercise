@@ -1,4 +1,3 @@
-import './App.css';
 import Header from './features/header/Header'
 import Question from './features/question/Question'
 import {
@@ -10,10 +9,11 @@ import {
     useParams,
     useRouteMatch
 } from "react-router-dom"
+import styles from './App.module.css'
 
 function App() {
   return (
-      <div className="App">
+      <div className={styles.app}>
           <Header />
           <Router>
               <Switch>

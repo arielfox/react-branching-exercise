@@ -22,14 +22,17 @@ const Breadcrumbs = ({question}) => {
             dispatch({ type: 'questions/optionUnselected', payload: selection.id })
         }
 
-        return(
+        if (selection.id !== question.id) {
+            return(
                 <li className={styles.breadcrumb} key={selection.id} onClick={handleBreadcrumbClick}>
                     <Link to={`/${selection.id}`}>{selection.breadcrumb}</Link>
                     {' > '}
                 </li>
+            )
+
+        }
 
 
-        )
     })
     return (
         <ul className={styles.breadcrumbList}>

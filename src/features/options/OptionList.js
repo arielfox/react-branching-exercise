@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import OptionItem from './OptionItem'
+import styles from './Options.module.css'
 
 
 const OptionList = ({ question }) => {
@@ -7,7 +8,7 @@ const OptionList = ({ question }) => {
         <OptionItem key={option.id} option={option} question={question} />
     )
     return (
-        <ul>{renderedOptions}</ul>
+        <ul className={styles.optionList}>{renderedOptions}</ul>
     )
 }
 

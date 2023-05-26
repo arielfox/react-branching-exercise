@@ -10,6 +10,7 @@ import {
     useParams,
     useRouteMatch
 } from "react-router-dom"
+import styles from './Options.module.css'
 
 
 
@@ -17,12 +18,19 @@ const OptionItem = ({option, question}) => {
     const dispatch = useDispatch()
 
     function handleClick() {
-        dispatch({ type: 'questions/optionSelected', payload: {questionId: question.id, breadcrumb: question.breadcrumb, optionId: option.id} })
+        dispatch({
+            type: 'questions/optionSelected',
+            payload: {questionId: question.id, breadcrumb: question.breadcrumb, optionId: option.id}
+        })
     }
 
     return(
         <div>
-            <Link to={`/${option.nextQuestionId}`}><li onClick={handleClick} key={option.id}>{option.text}</li></Link>
+            <Link className={styles.optionItemLink} to={`/${option.nextQuestionId}`}>
+                <li className={styles.optionItem} onClick={handleClick} key={option.id}>
+                    {option.text}
+                </li>
+            </Link>
         </div>
     )
 }
