@@ -14,7 +14,7 @@ import styles from './Breadcrumbs.module.css'
 const Breadcrumbs = ({question}) => {
     const selectHistory = state => state.questions
     const history = useSelector(selectHistory)
-    // console.log(history)
+
     const dispatch = useDispatch()
 
     const selections = history.map((selection) => {
